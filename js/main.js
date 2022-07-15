@@ -1,27 +1,27 @@
 let articulos = [
     {
-        "title": "Remera Oversize",
-        "id": "1",
-        "precio": "3000",
-        "img": "https://github.com/bautistasaggese/michelangelo/blob/main/img/remeraBlancaMBAtras0000.png"
+        title: "Remera Oversize",
+        id: 1,
+        precio: 3000,
+        url: "img/remeraBlancaMBAtras0000.png"
     },
     {
-        "title": "Buzo Oversize",
-        "id": "2",
-        "precio": "7500",
-        "img": "https://github.com/bautistasaggese/michelangelo/blob/main/img/buzoMA0000.png"
+        title: "Buzo Oversize",
+        id: 2,
+        precio: 7500,
+        url: "img/buzoSmile0000.png"
     },
     {
-        "title": "Buzo Oversize",
-        "id": "3",
-        "precio": "7500",
-        "img": "https://github.com/bautistasaggese/michelangelo/blob/main/img/buzoMA0000.png"
+        title: "Buzo Oversize",
+        id: 3,
+        precio: 7500,
+        url: "img/buzoMb0000.png"
     },
     {
-        "title": "Buzo Baggy",
-        "id": "4",
-        "precio": "8000",
-        "img": "https://github.com/bautistasaggese/michelangelo/blob/main/img/buzoBuonarroti0000.png"
+        title: "Buzo Baggy",
+        id: 4,
+        precio: 7500,
+        url: "img/buzoBuonarroti0000.png"
     }
 ]
 
@@ -43,7 +43,6 @@ items.addEventListener('click', e => { btnAumentarDisminuir(e) })
 
 // Traer productos
 const fetchData = async () => {
-    const res = articulos;
     const data = articulos
     // console.log(data)
     pintarCards(data)
@@ -53,8 +52,9 @@ const fetchData = async () => {
 const pintarCards = data => {
     data.forEach(articulos => {
         templateCard.querySelector('h5').textContent = articulos.title
-        templateCard.querySelector('p').textContent = articulos.precio
+        templateCard.querySelector('p').textContent = articulos.precio 
         templateCard.querySelector('button').dataset.id = articulos.id
+        templateCard.querySelector("img").src = articulos.url
         const clone = templateCard.cloneNode(true)
         fragment.appendChild(clone)
     })
