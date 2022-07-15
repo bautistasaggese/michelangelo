@@ -67,6 +67,14 @@ const addCarrito = e => {
         // console.log(e.target.dataset.id)
         // console.log(e.target.parentElement)
         setCarrito(e.target.parentElement)
+        swal({
+            title: 'Genial',
+            text: 'Tu producto se ha añadido al carrito!',
+            icon: 'success',
+            //confirm: 'Ok',
+            buttons: false,
+            timer: 1500
+        })
     }
     e.stopPropagation()
 }
